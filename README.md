@@ -10,16 +10,33 @@ This project provides a backend service for a phone store, built with JavaScript
 
 - **Language**: JavaScript
 - **Runtime**: Node.js
+- **Framework**: Express.js
+- **Development**: Nodemon (for auto-restart on file changes)
 
 ## Project Structure
 
-The project contains the backend logic and APIs required for phone store operations.
+```
+Backend-Phone-Store/
+├── app.js                 # Main application file
+├── package.json          # Project dependencies and scripts
+├── routes/
+│   ├── admin/
+│   │   └── authRoute.js  # Admin authentication routes
+│   └── users/
+│       ├── userRoutes.js # User routes
+│       └── brandRoute.js # Brand routes
+├── .env                  # Environment variables
+└── node_modules/         # Dependencies (generated after npm install)
+```
 
 ## Features
 
 - Phone inventory management
 - Order processing
 - Store operations
+- Admin authentication
+- User management
+- Brand management
 
 ## Installation
 
@@ -34,13 +51,67 @@ cd Backend-Phone-Store
 npm install
 ```
 
-## Getting Started
+3. Create a `.env` file in the root directory and add your configuration:
+```bash
+PORT=3000
+# Add other environment variables as needed
+```
 
-To get started with this project, follow the installation steps above and refer to the project configuration files for setup details.
+## Getting Started & Running the Application
+
+### Development Mode (with Nodemon)
+
+To run the application with **Nodemon** (auto-restart on file changes):
+
+```bash
+npm start
+```
+
+This will start the server on the port specified in your `.env` file (default: `3000`).
+
+**Features:**
+- Automatically restarts the server when you make changes to files
+- Perfect for development and debugging
+- No need to manually restart after each code change
+
+### Alternative: Run Directly with Nodemon
+
+You can also run nodemon directly on the app.js file:
+
+```bash
+nodemon app.js
+```
+
+### Production Mode
+
+For production, you can run the app directly without Nodemon:
+
+```bash
+node app.js
+```
+
+## Configuration
+
+Make sure to set up your `.env` file with the following variables:
+- `PORT` - Server port (default: 3000)
+- Database connection details
+- JWT secrets
+- Email configuration (if using nodemailer)
 
 ## Usage
 
-[Add specific usage instructions based on your application]
+Once running, the API will be available at:
+- Admin Auth: `http://localhost:3000/api/auth/admin`
+- User Auth: `http://localhost:3000/api/auth/users`
+- Brands: `http://localhost:3000/api/user/brands`
+
+[Add specific usage instructions and API endpoints based on your application]
+
+## Available Scripts
+
+- `npm start` - Run the application with Nodemon (development mode)
+- `nodemon app.js` - Alternative way to run with Nodemon
+- `npm test` - Run tests (configure as needed)
 
 ## License
 
