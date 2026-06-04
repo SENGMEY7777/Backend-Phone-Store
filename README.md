@@ -82,15 +82,6 @@ Make sure to set up your `.env` file with the following variables:
 - JWT secrets
 - Email configuration (if using nodemailer)
 
-## Usage
-
-Once running, the API will be available at:
-- Admin Auth: `http://localhost:3000/api/auth/admin`
-- User Auth: `http://localhost:3000/api/auth/users`
-- Brands: `http://localhost:3000/api/user/brands`
-
-[Add specific usage instructions and API endpoints based on your application]
-
 ## Available Scripts
 
 - `npm start` - Run the application with Nodemon (development mode)
