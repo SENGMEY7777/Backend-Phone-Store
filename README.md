@@ -13,22 +13,6 @@ This project provides a backend service for a phone store, built with JavaScript
 - **Framework**: Express.js
 - **Development**: Nodemon (for auto-restart on file changes)
 
-## Project Structure
-
-```
-Backend-Phone-Store/
-├── app.js                 # Main application file
-├── package.json          # Project dependencies and scripts
-├── routes/
-│   ├── admin/
-│   │   └── authRoute.js  # Admin authentication routes
-│   └── users/
-│       ├── userRoutes.js # User routes
-│       └── brandRoute.js # Brand routes
-├── .env                  # Environment variables
-└── node_modules/         # Dependencies (generated after npm install)
-```
-
 ## Features
 
 - Phone inventory management
