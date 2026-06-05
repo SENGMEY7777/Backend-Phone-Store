@@ -10,6 +10,17 @@ const login = async (req, res) => {
     }
 }
 
+const logout = async (req, res) => {
+    try {
+        const adminId = req.user.id;
+        let result = await authService.logout(adminId);
+        return sendResponse(res, 200, true, 'Admin logout successfully', result);
+    } catch (error) {
+        return sendResponse(res, 400, false, error.message);
+    }
+}
+
 module.exports = {
-    login
+    login,
+    logout
 }

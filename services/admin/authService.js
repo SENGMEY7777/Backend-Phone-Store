@@ -41,6 +41,19 @@ const login = async (body) => {
     };
 }
 
+const logout = async (adminId) => {
+    if(!adminId) {
+        throw new Error('Admin ID is required');
+    }
+
+    await userModel.deleteToken(adminId);
+
+    return {
+        message: 'Logout successfully'
+    };
+}
+
 module.exports = {
-    login
+    login,
+    logout
 }
