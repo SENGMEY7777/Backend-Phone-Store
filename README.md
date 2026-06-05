@@ -77,7 +77,6 @@ node app.js
 ## Configuration
 
 Make sure to set up your `.env` file with the following variables:
-- `PORT` - Server port (default: 3000)
 - Database connection details
 - JWT secrets
 - Email configuration (if using nodemailer)
