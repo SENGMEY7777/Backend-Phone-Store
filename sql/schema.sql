@@ -1,11 +1,11 @@
-CREATE DATABASE IF NOT EXISTS PhoneStore;
+CREATE DATABASE PhoneStore;
 USE PhoneStore;
 
 -- ==========================================
 -- USERS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(150) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS users (
 -- BRANDS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS brands (
+CREATE TABLE brands (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
     description TEXT,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS brands (
 -- PRODUCTS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE products (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     brand_id BIGINT NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS products (
 -- ORDERS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE orders (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     user_id BIGINT NOT NULL,
     order_type ENUM('ORDER', 'PREORDER') NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS orders (
 -- ORDER ITEMS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS order_items (
+CREATE TABLE order_items (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     order_id BIGINT NOT NULL,
     product_id BIGINT NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS order_items (
 -- PAYMENTS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS payments (
+CREATE TABLE payments (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     order_id BIGINT NOT NULL UNIQUE,
     payment_method VARCHAR(50) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS payments (
 -- PRODUCT REVIEWS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS product_reviews (
+CREATE TABLE product_reviews (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     product_id BIGINT NOT NULL,
     user_id BIGINT NOT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS product_reviews (
 -- INVENTORY LOGS
 -- ==========================================
 
-CREATE TABLE IF NOT EXISTS inventory_logs (
+CREATE TABLE inventory_logs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     product_id BIGINT NOT NULL,
     action_type VARCHAR(30) NOT NULL,
