@@ -9,7 +9,7 @@ const authSchema = Joi.object({
       'any.required': 'Email is required'
     }),
 
-  password: Joi.string()
+  password_hash: Joi.string()
     .pattern(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     )
