@@ -4,7 +4,7 @@ const sendVerificationEmail = async (to, token) => {
   const verificationLink = `http://localhost:3000/api/auth/users/verify-email?token=${token}`;
 
   await transporter.sendMail({
-    from: `My App <noreply@myapp.com>`, // Professional "From" header
+    from: `Phone Store <noreply@myapp.com>`, // Professional "From" header
     to,
     subject: 'Confirm your email address',
     html: `
@@ -80,7 +80,7 @@ const sendVerificationEmail = async (to, token) => {
 
 const sendPasswordResetOtp = async (to, otp) => {
   await transporter.sendMail({
-    from: `My App <noreply@myapp.com>`,
+    from: `Phone Store <noreply@myapp.com>`,
     to,
     subject: 'Reset your password',
     html: `
