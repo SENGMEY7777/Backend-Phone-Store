@@ -200,3 +200,32 @@ VALUES
     ('Xiaomi', 'Xiaomi Smartphones')
 ON DUPLICATE KEY UPDATE
     description = VALUES(description);
+
+-- ==========================================
+-- SAMPLE PRODUCTS
+-- ==========================================
+
+INSERT INTO products (id, brand_id, name, description, price, stock_quantity, preorder_available, preorder_release_date, image_url, is_active)
+VALUES
+    (1, 2, 'iPhone 15 Pro Max', 'Apple\'s flagship phone with a titanium design, A17 Pro chip, and advanced 5x Telephoto camera.', 1199.99, 45, 0, NULL, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80', 1),
+    (2, 2, 'iPhone 15', 'Features Dynamic Island, a 48MP Main camera, and USB-C, all in a durable color-infused glass and aluminum design.', 799.99, 40, 0, NULL, 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=600&q=80', 1),
+    (3, 2, 'iPhone SE (3rd Gen)', 'A powerful pocket-sized smartphone with the A15 Bionic chip, 5G speed, and home button with Touch ID.', 429.99, 25, 0, NULL, 'https://images.unsplash.com/photo-1565630916779-e303be97b6f5?auto=format&fit=crop&w=600&q=80', 1),
+    (4, 1, 'Samsung Galaxy S24 Ultra', 'Titanium built exterior with 200MP camera, built-in S Pen, and Galaxy AI features for translation and editing.', 1299.99, 30, 0, NULL, 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80', 1),
+    (5, 1, 'Samsung Galaxy Z Fold 5', 'A large 7.6" screen foldable smartphone with multi-window multitasking, hands-free Flex Mode, and S Pen support.', 1799.99, 15, 0, NULL, 'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80', 1),
+    (6, 1, 'Samsung Galaxy A55', 'A balance of performance and affordability with a 50MP triple camera, 120Hz display, and long-lasting 5000mAh battery.', 449.99, 60, 0, NULL, 'https://images.unsplash.com/photo-1573148195900-7845dcb9b127?auto=format&fit=crop&w=600&q=80', 1),
+    (7, 3, 'Xiaomi 14 Ultra', 'Leica quad-camera system with a 1-inch main sensor, Snapdragon 8 Gen 3, and premium vegan leather finish.', 999.99, 20, 0, NULL, 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80', 1),
+    (8, 3, 'Xiaomi Redmi Note 13 Pro+', '200MP camera with OIS, 1.5K 120Hz curved display, and ultra-fast 120W HyperCharge.', 399.99, 80, 0, NULL, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80', 1),
+    (9, 3, 'Xiaomi Poco F6', 'Flagship killer performance with Snapdragon 8s Gen 3, LiquidCool Technology 4.0, and a sleek modern design.', 349.99, 50, 0, NULL, 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80', 1),
+    (10, 2, 'iPhone 16 Pro', 'Upcoming generation with advanced Apple Intelligence, larger screen sizes, and new Capture Button.', 1099.99, 0, 1, '2026-09-15', 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80', 1),
+    (11, 1, 'Samsung Galaxy Z Fold 6', 'Next generation foldable with enhanced slim body, improved hinge durability, and advanced AI features.', 1899.99, 0, 1, '2026-07-24', 'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80', 1)
+ON DUPLICATE KEY UPDATE
+    brand_id = VALUES(brand_id),
+    name = VALUES(name),
+    description = VALUES(description),
+    price = VALUES(price),
+    stock_quantity = VALUES(stock_quantity),
+    preorder_available = VALUES(preorder_available),
+    preorder_release_date = VALUES(preorder_release_date),
+    image_url = VALUES(image_url),
+    is_active = VALUES(is_active);
+

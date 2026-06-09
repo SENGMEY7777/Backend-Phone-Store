@@ -136,6 +136,11 @@ docker compose up -d --build
 docker exec -it phone_store_db mysql -u root -prootpassword 
 ```
 
+### How to create an admin 
+```
+node scripts/create-admin.js "Admin User" [EMAIL_ADDRESS] "123456"
+```
+
 ### Image Upload Issues
 - Verify Cloudinary credentials
 - Check file size limits
@@ -147,7 +152,7 @@ This project is licensed under the ISC License - see the LICENSE file for detail
 
 ## Author
 
-**SENGMEY7777** - [GitHub Profile](https://github.com/SENGMEY7777)
+**TeamPrint("Hello World")** 
 
 ---
 
