@@ -87,9 +87,9 @@ const verifyEmail = async (token) => {
 
     await userModel.markEmailAsVerified(userInfo[0].id);
 
-    let result = await userModel.findEmail(userInfo[0].email);
+    // let result = await userModel.findEmail(userInfo[0].email);
 
-    return result[0];
+    // return result[0];
 
 }
 
