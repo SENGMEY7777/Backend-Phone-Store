@@ -1,0 +1,1188 @@
+{
+  "info": {
+    "_postman_id": "cee6dd90-22e5-40f3-8e49-a1335d68fe74",
+    "name": "Phone-Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54520818"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "User",
+          "item": [
+            {
+              "name": "Verifications",
+              "item": [
+                {
+                  "name": "Verify email",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "token",
+                        "value": "e3f0b1cb146a89ed29e28a712f46b75055527ab6396711e9a8748b73a083425f",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \n}"
+                    },
+                    "url": {
+                      "raw": "http://localhost:3000/api/auth/users/verify-email?token=e3f0b1cb146a89ed29e28a712f46b75055527ab6396711e9a8748b73a083425f",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "3000",
+                      "path": [
+                        "api",
+                        "auth",
+                        "users",
+                        "verify-email"
+                      ],
+                      "query": [
+                        {
+                          "key": "token",
+                          "value": "e3f0b1cb146a89ed29e28a712f46b75055527ab6396711e9a8748b73a083425f"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Resent verification link",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"vannsengmey748+1@gmail.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{phone_store}}/api/auth/users/resend-verification",
+                      "host": [
+                        "{{phone_store}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "users",
+                        "resend-verification"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "Reset Password",
+              "item": [
+                {
+                  "name": "Reset password",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"vannsengmey748+1@gmail.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{phone_store}}/api/auth/users/forgot-password",
+                      "host": [
+                        "{{phone_store}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "users",
+                        "forgot-password"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Verify otp code",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"vannsengmey748+1@gmail.com\",\n  \"otp\": \"445176\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{phone_store}}/api/auth/users/verify-reset-otp",
+                      "host": [
+                        "{{phone_store}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "users",
+                        "verify-reset-otp"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Reset password",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"vannsengmey748+1@gmail.com\",\n  \"otp\": \"445176\",\n  \"password_hash\": \"newPassword123\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{phone_store}}/api/auth/users/reset-password",
+                      "host": [
+                        "{{phone_store}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "users",
+                        "reset-password"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "Register account",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\" : \"Vann Sengmey\",\n    \"email\" : \"vannsengmey748+14@gmail.com\",\n    \"password_hash\" : \"Sengmey123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{phone_store}}/api/auth/users/register",
+                  "host": [
+                    "{{phone_store}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "users",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "User login",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\" : \"Vann Sengmey\",\n    \"email\" : \"vannsengmey748@gmail.com\",\n    \"password_hash\" : \"Sengmey123\"\n}"
+                },
+                "url": {
+                  "raw": "{{phone_store}}/api/auth/users/login",
+                  "host": [
+                    "{{phone_store}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "users",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get all users",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNTA0MDIwLCJleHAiOjE3ODA1OTA0MjB9.-GjjM4ZXu06_VC9lkKhITBeDnOU6mrjcUHyESOOEPOI",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{phone_store}}/api/auth/users/all",
+                  "host": [
+                    "{{phone_store}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "users",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Logout",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\" : \"vannsengmey748+9@gmail.com\",\n    \"password_hash\" : \"Sengmey123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{phone_store}}/api/auth/users/logout",
+                  "host": [
+                    "{{phone_store}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "users",
+                    "logout"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Admin",
+          "item": [
+            {
+              "name": "Login",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"sengmey2004@gmail.com\",\n  \"password_hash\": \"PhoneStore@123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{phone_store}}/api/auth/admin/login",
+                  "host": [
+                    "{{phone_store}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "admin",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Logout",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoic2VuZ21leTIwMDRAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgwNjQ4NjAyLCJleHAiOjE3ODA3MzUwMDJ9.uI3b6CDlli-Tz8M0WW2HZg9X8oeIJRi567-gy-v9GlM",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{phone_store}}/api/auth/admin/logout",
+                  "host": [
+                    "{{phone_store}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "admin",
+                    "logout"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brands",
+      "item": [
+        {
+          "name": "Get all brands",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/brands/all",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "brands",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create brand",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Mac M2\",\n    \"description\": \"Apple iPhone Series\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/brands/create",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "brands",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update brand by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Mac M2\",\n    \"description\": \"Apple iPhone Series\"\n}"
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/brands/1",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "brands",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete brand by id",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Mac M2\",\n    \"description\": \"Apple iPhone Series\"\n}"
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/brands/30",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "brands",
+                "30"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get all products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/products/all",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "products",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "brand_id",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "8b1bfc8f-6103-41fa-ba5b-2ea68eb13fa5"
+                },
+                {
+                  "key": "name",
+                  "value": "iPhone 15 Pro",
+                  "type": "text",
+                  "uuid": "2e33ba4b-add0-4b77-9fda-86e2897ef557"
+                },
+                {
+                  "key": "description",
+                  "value": "Latest Apple phone",
+                  "type": "text",
+                  "uuid": "308584c4-c6a4-4827-ad77-3f3ad31a06ea"
+                },
+                {
+                  "key": "price",
+                  "value": "999.99",
+                  "type": "text",
+                  "uuid": "943a808b-76c9-46d3-8fad-0d07755474f5"
+                },
+                {
+                  "key": "stock_quantity",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "7adb232e-c913-435b-b855-25f198e9ecdb"
+                },
+                {
+                  "key": "preorder_available",
+                  "value": "false",
+                  "type": "text",
+                  "uuid": "5a7f6110-e920-4780-af94-a528b9fa0a31"
+                },
+                {
+                  "key": "preorder_release_date",
+                  "value": "2026-01-01",
+                  "type": "text",
+                  "uuid": "9b50f757-5206-46a8-a680-06c5dfbd35f0"
+                },
+                {
+                  "key": "image_url",
+                  "value": "https://example.com/img.jpg",
+                  "type": "text",
+                  "uuid": "177927f9-4efe-4f0a-b6d2-20720ac0ff97"
+                },
+                {
+                  "key": "is_active",
+                  "value": "true",
+                  "type": "text",
+                  "uuid": "f9a4d9d6-83fc-451f-8f25-9232eb89838c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/products/create",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "products",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update product by id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "brand_id",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "ed72b453-b02d-4bfe-833a-b45da3e82f1c"
+                },
+                {
+                  "key": "name",
+                  "value": "I phone 17 Pro Max",
+                  "type": "text",
+                  "uuid": "c6515a87-2aa3-471e-ae42-2325eaa9a101"
+                },
+                {
+                  "key": "description",
+                  "value": "I phone 17 series",
+                  "type": "text",
+                  "uuid": "0f52226a-ad2c-4bb7-90fc-37b4322adba5"
+                },
+                {
+                  "key": "price",
+                  "value": "1300.00",
+                  "type": "text",
+                  "uuid": "62189f7b-3e60-416f-8abb-b1bb71ecbe7c"
+                },
+                {
+                  "key": "stock_quantity",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "73d67856-81ff-4518-ad6a-24d7df7f1fb3"
+                },
+                {
+                  "key": "preorder_available",
+                  "value": "true",
+                  "type": "text",
+                  "uuid": "9836b688-a8be-462f-84d8-067b16c33f03"
+                },
+                {
+                  "key": "preorder_release_date",
+                  "value": "2026-01-01",
+                  "type": "text",
+                  "uuid": "2106da64-8523-4ee9-8d5b-947a17c35109"
+                },
+                {
+                  "key": "image_url",
+                  "type": "file",
+                  "uuid": "559f732f-b05e-462c-bddc-1ae44360bbff",
+                  "src": "/Users/macbook/Documents/iphone.jpg"
+                },
+                {
+                  "key": "is_active",
+                  "value": "true",
+                  "type": "text",
+                  "uuid": "b0ef6a7f-5072-476b-bd7b-51f1bfa04416"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/products/4",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "products",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete product by id",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/products/3",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "products",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product by id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "brand_id",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "8b1bfc8f-6103-41fa-ba5b-2ea68eb13fa5"
+                },
+                {
+                  "key": "name",
+                  "value": "iPhone 15 Pro",
+                  "type": "text",
+                  "uuid": "2e33ba4b-add0-4b77-9fda-86e2897ef557"
+                },
+                {
+                  "key": "description",
+                  "value": "Latest Apple phone",
+                  "type": "text",
+                  "uuid": "308584c4-c6a4-4827-ad77-3f3ad31a06ea"
+                },
+                {
+                  "key": "price",
+                  "value": "999.99",
+                  "type": "text",
+                  "uuid": "943a808b-76c9-46d3-8fad-0d07755474f5"
+                },
+                {
+                  "key": "stock_quantity",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "7adb232e-c913-435b-b855-25f198e9ecdb"
+                },
+                {
+                  "key": "preorder_available",
+                  "value": "false",
+                  "type": "text",
+                  "uuid": "5a7f6110-e920-4780-af94-a528b9fa0a31"
+                },
+                {
+                  "key": "preorder_release_date",
+                  "value": "2026-01-01",
+                  "type": "text",
+                  "uuid": "9b50f757-5206-46a8-a680-06c5dfbd35f0"
+                },
+                {
+                  "key": "image_url",
+                  "value": "https://example.com/img.jpg",
+                  "type": "text",
+                  "uuid": "177927f9-4efe-4f0a-b6d2-20720ac0ff97"
+                },
+                {
+                  "key": "is_active",
+                  "value": "true",
+                  "type": "text",
+                  "uuid": "f9a4d9d6-83fc-451f-8f25-9232eb89838c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/products/4",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "products",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "create order products",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_type\": \"ORDER\",\n  \"items\": [\n    {\n      \"product_id\": 5,\n      \"quantity\": 1\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/orders/create",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "orders",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all user orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/orders/all",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "orders",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update status order by id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_type\": \"PREORDER\",\n  \"items\": [\n    {\n      \"product_id\": 5,\n      \"quantity\": 1\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/orders/2/status",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "orders",
+                "2",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product order by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/orders/1",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete product order by id",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/orders/2",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "orders",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product Reviews",
+      "item": [
+        {
+          "name": "Create product review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_id\": 5,\n  \"rating\": 5,\n  \"review_text\": \"Good phone\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/reviews/create",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "reviews",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all products review",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/reviews/all",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "reviews",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product review by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/reviews/1",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "reviews",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete product review by id",
+              "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{phone_store}}/api/user/reviews/20",
+                "host": [
+                  "{{phone_store}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "reviews",
+                  "20"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update product review by id",
+            "request": {
+              "method": "PUT",
+              "header": []
+            },
+            "response": []
+          }
+        ]
+      },
+    {
+      "name": "Inventory Log",
+      "item": [
+        {
+          "name": "Create inventory log",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_id\": 5,\n  \"action_type\": \"ADD\",\n  \"quantity_changed\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/inventory/create",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "inventory",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all inventory log",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Get inventory log by id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_id\": 5,\n  \"action_type\": \"ADD\",\n  \"quantity_changed\": 12\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{phone_store}}/api/user/inventory/1",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "inventory",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get inventory log product by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoidmFubnNlbmdtZXk3NDgrMTRAZ21haWwuY29tIiwiaWF0IjoxNzgwNjQ2NTE2LCJleHAiOjE3ODA3MzI5MTZ9.d5y9_27A6EuJKyhI8PM4VibFrk-tnB-U6VhNp64NMZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{phone_store}}/api/user/inventory/product/1",
+              "host": [
+                "{{phone_store}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "inventory",
+                "product",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

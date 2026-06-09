@@ -130,6 +130,12 @@ node app.js         # Run directly without Nodemon (production mode)
 - Check if email provider requires app-specific passwords
 - Ensure firewall allows SMTP connections
 
+### How to run mysql with docker 
+```
+docker compose up -d --build
+docker exec -it phone_store_db mysql -u root -prootpassword 
+```
+
 ### Image Upload Issues
 - Verify Cloudinary credentials
 - Check file size limits
@@ -146,3 +152,7 @@ This project is licensed under the ISC License - see the LICENSE file for detail
 ---
 
 Feel free to contribute to this project! For questions or suggestions, please open an issue or submit a pull request.
+
+
+
+ 
