@@ -1,4 +1,4 @@
-const { BakongKHQR, khqrData, MerchantInfo } = require("bakong-khqr");
+const { BakongKHQR, khqrData, IndividualInfo } = require("bakong-khqr");
 const paymentModel = require('../../models/users/paymentModel');
 const orderModel = require('../../models/users/orderModel');
 
@@ -30,37 +30,34 @@ const generatePaymentQR = async (orderId) => {
     const storeLabel = process.env.BAKONG_STORE_LABEL || 'CamboPhoneStore';
     const terminalLabel = process.env.BAKONG_TERMINAL_LABEL || 'Web Terminal 01';
     
-    // We can use the bank name or account ID prefix as merchant ID/bank code
-    const merchantId = bakongAccountId.split('@')[0];
-
     const optionalData = {
         currency: khqrData.currency.usd, // Default to USD since database prices are in USD
         amount: amount,
+        accountInformation: mobileNumber,
+        acquiringBank: bankName,
         mobileNumber: mobileNumber,
         storeLabel: storeLabel.slice(0, 25), // Ensure length is within limits
         terminalLabel: terminalLabel.slice(0, 25),
         expirationTimestamp: Date.now() + 30 * 60 * 1000 // 30 minutes expiration
     };
 
-    const merchantInfo = new MerchantInfo(
+    const individualInfo = new IndividualInfo(
         bakongAccountId,
         merchantName,
         merchantCity,
-        merchantId,
-        bankName,
         optionalData
     );
 
     // 3. Generate KHQR
     const KHQR = new BakongKHQR();
-    const merchant = KHQR.generateMerchant(merchantInfo);
+    const individual = KHQR.generateIndividual(individualInfo);
 
-    if (!merchant || !merchant.data) {
+    if (!individual || !individual.data) {
         throw new Error('Failed to generate Bakong KHQR');
     }
 
-    const qrCode = merchant.data.qr;
-    const md5Hash = merchant.data.md5;
+    const qrCode = individual.data.qr;
+    const md5Hash = individual.data.md5;
 
     // 4. Save/Update Payment Record in the database
     await paymentModel.createPayment({

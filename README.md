@@ -137,9 +137,17 @@ docker exec -it phone_store_db mysql -u root -prootpassword
 ```
 
 ### How to create an admin 
+
+If running locally on the host machine:
+```bash
+node script/admin_creation.js "Admin User" admin@gmail.com "Query@$$123"
 ```
-node scripts/create-admin.js "Admin User" [EMAIL_ADDRESS] "123456"
+
+If running via Docker:
+```bash
+docker exec -it phone_store_app node script/admin_creation.js "Admin User" admin@gmail.com "Query@$$123"
 ```
+
 
 ### Image Upload Issues
 - Verify Cloudinary credentials
