@@ -119,6 +119,8 @@ CREATE TABLE payments (
         'REFUNDED'
     ) NOT NULL DEFAULT 'PENDING',
     paid_at TIMESTAMP NULL,
+    qr_code TEXT NULL,
+    md5_hash VARCHAR(255) NULL,
 
     CONSTRAINT fk_payment_order
         FOREIGN KEY (order_id)
