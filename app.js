@@ -16,6 +16,7 @@ const productRoute = require('./routes/users/productRoute');
 const orderRoute = require('./routes/users/orderRoute');
 const reviewRoute = require('./routes/users/reviewRoute');
 const inventoryRoute = require('./routes/users/inventoryRoute');
+const paymentRoute = require('./routes/users/paymentRoute');
 
 app.use('/api/auth/admin', authRoute);
 app.use('/api/auth/users', userRoutes);
@@ -24,6 +25,7 @@ app.use('/api/user/products', productRoute);
 app.use('/api/user/orders', orderRoute);
 app.use('/api/user/reviews', reviewRoute);
 app.use('/api/user/inventory', inventoryRoute);
+app.use('/api/user/payments', paymentRoute);
 
 
 app.listen(PORT, () => {
