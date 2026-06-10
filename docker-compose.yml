@@ -36,13 +36,10 @@ services:
       DB_NAME: PhoneStore
       DB_PORT: 3306
       JWT_SECRET: secretkey
-      NODE_ENV: development
+      NODE_ENV: production
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - .:/usr/src/app
-    command: npm start
 
 volumes:
   db_data:
